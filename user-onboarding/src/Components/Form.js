@@ -2,10 +2,11 @@ import React from 'react';
 import '../App.css';
 
 
-export default function Form({form, setForm, disabled}){
+export default function Form({form, setForm, disabled, checkFormErrors}){
   const change = event => {
       const {checked, value, name, type} = event.target
       const checkedValue = type === 'checkbox'? checked : value
+      checkFormErrors(name, checkedValue)
       setForm({...form,[name]:checkedValue}) 
   }
 
