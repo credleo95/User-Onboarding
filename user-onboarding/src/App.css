@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+html{
+  background-color: rgb(144, 208, 233, .6)
+}
+.form-container{
+  border: 2px solid black; 
+  margin: 10%;  
+}
+.submit button{
+  background-color: rgba(200, 219, 226, 0.6);
+  color: red; 
+}
