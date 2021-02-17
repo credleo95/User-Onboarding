@@ -4,13 +4,14 @@ import './App.css';
 import Schema from './Components/Schema';
 import * as yup from 'yup';
 
-
+// Empty Form 
 const startingForm = {
   name: '',
   email: '',
   password: '',
   agree: false
 }
+// Form Errors reference 
 const formErrors = {
   name: '',
   email: '',
@@ -18,6 +19,7 @@ const formErrors = {
   agree: ''
 }
 function App() {
+  // Initialized state 
   const [form, setForm] = useState(startingForm)
   const [disabled, setDisabled] = useState(true)
   const [errors, setErrors] = useState(formErrors)
@@ -35,12 +37,18 @@ function App() {
 
   return (
     <div className="App">
-      <Form form={form} setForm={setForm} disabled={disabled} checkFormErrors={checkFormErrors} setErrors={setErrors} startingForm={startingForm} users={users} setUsers={setUsers}/>
+      <Form form={form} setForm={setForm} disabled={disabled} checkFormErrors={checkFormErrors} setErrors={setErrors} startingForm={startingForm} setUsers={setUsers}/>
       <div style={{color: 'red'}}> 
       <div>{errors.name}</div><div>{errors.email}</div><div>{errors.password}</div><div>{errors.agree}</div>
       </div>
         <pre>
-          {JSON.stringify(users)}
+          Name: {JSON.stringify(users.name)}
+          <br/>
+          Email: {JSON.stringify(users.email)}
+          <br/>
+          Password: {JSON.stringify(users.password)}
+          <br/>
+          Agree: {JSON.stringify(users.agree)}
         </pre>
     </div>
   );
